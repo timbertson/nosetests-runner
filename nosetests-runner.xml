@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type='text/xsl' href='interface.xsl'?>
+<interface uri="http://gfxmonk.net/dist/0install/nosetests-runner.xml" xmlns="http://zero-install.sourceforge.net/2004/injector/interface">
+	<name>nosetests-runner</name>
+	<summary>run and manage nosetests plugins</summary>
+	<description>
+This program allows you to run nosetests with a user-specific set of plugins.
+
+use the --add-plugin and --remove-plugin option (as many times as
+you like) to add or remove plugin feeds. Each feed is just the
+URI of a zero-install nosetest plugin
+(see http://gfxmonk.net/dist/0install/rednose.xml for an example).
+
+Use --list-plugins to see what plugins you current have configured.
+
+The plugin list is stored in ~/.config/nosetests/0install-plugin-uris
+</description>
+	<group>
+		<command name="run" path="execute-feed"/>
+		<requires interface="http://0install.net/2007/interfaces/ZeroInstall.xml">
+			<environment insert="" mode="prepend" name="PYTHONPATH"/>
+			<environment insert="" mode="prepend" name="PATH"/>
+		</requires>
+		<implementation id="sha1new=1e67f887e1965c8de9a39bfc1300d7e979e5a70b" released="2011-01-30" version="0.1">
+  
+    <manifest-digest sha256="b86bc2b2fe77985002e3f515aa078202ded4b66945300bc7312171be8e04cc8b"/>
+    <archive href="http://gfxmonk.net/dist/0install/nosetests-runner/nosetests-runner-0.1.tgz" size="1308"/>
+  </implementation>
+	</group>
+</interface>
