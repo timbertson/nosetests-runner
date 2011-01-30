@@ -21,6 +21,7 @@ The plugin list is stored in ~/.config/nosetests/0install-plugin-uris
 			<environment insert="" mode="prepend" name="PYTHONPATH"/>
 			<environment insert="" mode="prepend" name="PATH"/>
 		</requires>
+		<requires interface="http://gfxmonk.net/dist/0install/nosetests-plugin-resolver.xml"/>
 		<implementation id="sha1new=1e67f887e1965c8de9a39bfc1300d7e979e5a70b" released="2011-01-30" version="0.1">
   
     <manifest-digest sha256="b86bc2b2fe77985002e3f515aa078202ded4b66945300bc7312171be8e04cc8b"/>
