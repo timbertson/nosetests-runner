@@ -1,19 +1,12 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <?xml-stylesheet type='text/xsl' href='interface.xsl'?>
-<interface uri="http://gfxmonk.net/dist/0install/nosetests-runner.xml" xmlns="http://zero-install.sourceforge.net/2004/injector/interface">
+<interface xmlns="http://zero-install.sourceforge.net/2004/injector/interface" uri="http://gfxmonk.net/dist/0install/nosetests-runner.xml">
 	<name>nosetests-runner</name>
 	<summary>run and manage nosetests plugins</summary>
 	<description>
 This program allows you to run nosetests with a user-specific set of plugins.
 
-use the --add-plugin and --remove-plugin option (as many times as
-you like) to add or remove plugin feeds. Each feed is just the
-URI of a zero-install nosetest plugin
-(see http://gfxmonk.net/dist/0install/rednose.xml for an example).
-
-Use --list-plugins to see what plugins you current have configured.
-
-The plugin list is stored in ~/.config/nosetests/0install-plugin-uris
+Run with --plugin-help for more details
 </description>
 	<group>
 		<command name="run" path="execute-feed"/>
@@ -23,9 +16,21 @@ The plugin list is stored in ~/.config/nosetests/0install-plugin-uris
 		</requires>
 		<requires interface="http://gfxmonk.net/dist/0install/nosetests-plugin-resolver.xml"/>
 		<implementation id="sha1new=1e67f887e1965c8de9a39bfc1300d7e979e5a70b" released="2011-01-30" version="0.1">
-  
-    <manifest-digest sha256="b86bc2b2fe77985002e3f515aa078202ded4b66945300bc7312171be8e04cc8b"/>
-    <archive href="http://gfxmonk.net/dist/0install/nosetests-runner/nosetests-runner-0.1.tgz" size="1308"/>
-  </implementation>
+			<manifest-digest sha256="b86bc2b2fe77985002e3f515aa078202ded4b66945300bc7312171be8e04cc8b"/>
+			<archive href="http://gfxmonk.net/dist/0install/nosetests-runner/nosetests-runner-0.1.tgz" size="1308"/>
+		</implementation>
+	</group>
+	<group>
+		<command name="run">
+			<runner interface="http://gfxmonk.net/dist/0install/zeroinstall-plugin-manager.xml">
+				<arg>http://gfxmonk.net/dist/0install/nose.xml</arg>
+			</runner>
+		</command>
+		<command name="core" path="nosetests"/>
+		<requires interface="http://gfxmonk.net/dist/0install/python-env-importer.xml"/>
+		<implementation id="sha1new=40d78a05d6cb4ac89cd1effddbeddd5cfb33ba55" released="2011-07-31" version="0.2">
+			<manifest-digest sha256="5480f27465efb1defd17f81b683ebc7ec749ee1197dac296ceaaed8aaf3dc831"/>
+			<archive href="http://gfxmonk.net/dist/0install/nosetests-runner/nosetests-runner-0.2.tgz" size="325"/>
+		</implementation>
 	</group>
 </interface>

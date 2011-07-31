@@ -1,35 +1,11 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <?xml-stylesheet type='text/xsl' href='interface.xsl'?>
-<interface uri="http://gfxmonk.net/dist/0install/nosetests-plugin-resolver.xml" xmlns="http://zero-install.sourceforge.net/2004/injector/interface">
+<interface xmlns="http://zero-install.sourceforge.net/2004/injector/interface" uri="http://gfxmonk.net/dist/0install/nosetests-plugin-resolver.xml">
 	<name>nosetests-plugin-resolver</name>
 	<summary>wrapper around nosetests that resolves plugins from NOSETEST_PLUGINS</summary>
 	<description><![CDATA[
-This runner runs the python nosetests program, but
-using a plugin resolver based on entries in the NOSETEST_PLUGINS
-environment variable.
-
-This feed should not be run directly by users, the intended use
-is as a <runner> for user-specific zero-install feeds
-(see http://gfxmonk.net/dist/0install/nosetests-runner.xml).
-
-You can also compose your own set of nosetests plugins by listing
-them as <requires> elements and using this feed as a runner.
-
-For example:
-
-<group>
-	<command name="run">
-		<runner interface="http://gfxmonk.net/dist/0install/nosetests-plugin-resolver.xml"/>
-	</command>
-	<requires interface="http://example.com/my-nosetest-plugin"/>
-	<implementation id="." version="0.0.1"/>
-</group>
-
-This is very useful when using 0test, as you can ensure nosetests gets run
-with the correct set of plugins available.
-
-See this blog post for more details:
-http://gfxmonk.net/___TODO___
+This feed is no longer maintained, as it has been superceeded by
+http://gfxmonk.net/dist/0install/zeroinstall-plugin-manager.xml
 ]]></description>
 	<group>
 		<requires interface="http://gfxmonk.net/dist/0install/nose.xml"/>
@@ -37,8 +13,8 @@ http://gfxmonk.net/___TODO___
 		<environment insert="" mode="prepend" name="PATH"/>
 		<command name="run" path="nosetests"/>
 		<implementation id="sha1new=73a63daa09228af87946658f9524264317349e27" released="2011-01-30" version="0.1">
-    <manifest-digest sha256="806a68917302aca529a52668914d603c92bbe03d2ee0d69ce38012dbf7010777"/>
-    <archive href="http://gfxmonk.net/dist/0install/nosetests-plugin-resolver/nosetests-plugin-resolver-0.1.tgz" size="325"/>
-  </implementation>
+			<manifest-digest sha256="806a68917302aca529a52668914d603c92bbe03d2ee0d69ce38012dbf7010777"/>
+			<archive href="http://gfxmonk.net/dist/0install/nosetests-plugin-resolver/nosetests-plugin-resolver-0.1.tgz" size="325"/>
+		</implementation>
 	</group>
 </interface>
