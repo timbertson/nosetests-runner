@@ -23,11 +23,12 @@ Run with --plugin-help for more details
 	<group>
 		<command name="run">
 			<runner interface="http://gfxmonk.net/dist/0install/zeroinstall-plugin-manager.xml">
-				<arg>http://gfxmonk.net/dist/0install/nose.xml</arg>
+				<arg>http://gfxmonk.net/dist/0install/nosetests-runner.xml</arg>
 			</runner>
 		</command>
 		<command name="core" path="nosetests"/>
 		<requires interface="http://gfxmonk.net/dist/0install/python-env-importer.xml"/>
+		<requires interface="http://gfxmonk.net/dist/0install/nose.xml"/>
 		<implementation id="sha1new=40d78a05d6cb4ac89cd1effddbeddd5cfb33ba55" released="2011-07-31" version="0.2">
 			<manifest-digest sha256="5480f27465efb1defd17f81b683ebc7ec749ee1197dac296ceaaed8aaf3dc831"/>
 			<archive href="http://gfxmonk.net/dist/0install/nosetests-runner/nosetests-runner-0.2.tgz" size="325"/>
