@@ -6,4 +6,4 @@ def report_failed_plugin(path, e):
 	print >> sys.stderr, "Warning: couldn't import plugin %s - %s" % (path,e)
 
 loader = EnvImporter(envvar='NOSETESTS_PLUGINS')
-nose.run(addplugins = loader.load_all(on_error=report_failed_plugin))
+nose.main(addplugins = loader.load_all(on_error=report_failed_plugin))
