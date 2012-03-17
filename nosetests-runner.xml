@@ -26,7 +26,33 @@ Run with --plugin-help for more details
 				<arg>http://gfxmonk.net/dist/0install/nosetests-runner.xml</arg>
 			</runner>
 		</command>
-		<command name="core" path="nosetests"/>
+		<command name="run-py2">
+			<runner interface="http://gfxmonk.net/dist/0install/zeroinstall-plugin-manager.xml">
+				<arg>http://gfxmonk.net/dist/0install/nosetests-runner.xml</arg>
+				<arg>--plugin-command</arg>
+				<arg>core-py2</arg>
+			</runner>
+		</command>
+		<command name="run-py3">
+			<runner interface="http://gfxmonk.net/dist/0install/zeroinstall-plugin-manager.xml">
+				<arg>http://gfxmonk.net/dist/0install/nosetests-runner.xml</arg>
+				<arg>--plugin-command</arg>
+				<arg>core-py3</arg>
+			</runner>
+		</command>
+		<command name="core" path="nosetests">
+			<runner interface="http://repo.roscidus.com/python/python"/>
+		</command>
+		<command name="core-py3" path="nosetests">
+			<runner interface="http://repo.roscidus.com/python/python">
+				<version not-before="3"/>
+			</runner>
+		</command>
+		<command name="core-py2" path="nosetests">
+			<runner interface="http://repo.roscidus.com/python/python">
+				<version before="3"/>
+			</runner>
+		</command>
 		<requires interface="http://gfxmonk.net/dist/0install/python-env-importer.xml"/>
 		<requires interface="http://gfxmonk.net/dist/0install/nose.xml"/>
 		<implementation id="sha1new=40d78a05d6cb4ac89cd1effddbeddd5cfb33ba55" released="2011-07-31" version="0.2">
