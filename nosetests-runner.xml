@@ -67,5 +67,9 @@ Run with --plugin-help for more details
 			<manifest-digest sha256="db50aae77cfde0a879ce8163a445ba3e6e7933b393e225b541f1c6c507ec96ae"/>
 			<archive href="http://gfxmonk.net/dist/0install/nosetests-runner/nosetests-runner-0.3.1.tgz" size="331"/>
 		</implementation>
+		<implementation id="sha1new=9642f286a77e8e25ffd037d0bb248c92c39d3296" released="2013-02-13" version="0.4">
+			<manifest-digest sha256="a937de3ae62a50a29332dc2ade86f08767cb73388feb007a016192ba51d2ee4d"/>
+			<archive href="http://gfxmonk.net/dist/0install/nosetests-runner/nosetests-runner-0.4.tgz" size="380"/>
+		</implementation>
 	</group>
 </interface>
